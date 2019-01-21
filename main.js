@@ -1,10 +1,9 @@
-
-
-const data = Object.values(LOL.data) 
+const data = Object.values(window.LOL.data) 
 //console.log(data); 
 //Object.value = Devuelve un array que contiene los valores de las propiedades enumerables de un objeto dado.
 const containerRoot = document.getElementById('root');
-const selecTags = document.getElementById('tags'); //llamar al select de filtrar x tags
+const selectTags = document.getElementById('tags'); //llamar al select de filtrar x tags
+const selectAz = document.getElementById('order');
     
     
     /*
@@ -20,31 +19,35 @@ const selecTags = document.getElementById('tags'); //llamar al select de filtrar
     */
 
 
-    // MOSTRANDO DATA (Ejemplo de Ale)
-    const showData = (data) => {
+    // MOSTRANDO DATA 
+    const mostrarData = (data) => {
     let result = '';
     data.forEach(element => {   
       result = containerRoot.innerHTML += `
-        <div>
-            <div class="card">
-                <div class="box">
-                    <h3>${element.name}<br></h3>
-                    <p>Key:${element.key}</p>
-                    <div style="position: relative">
-                        <div class="img">  <img src="${element.img}">  </div>
-                        <div class="img2">  <img src="http://subirimagen.me/uploads/20190114151844.png">  </div>
-                    </div>
-                         <p>${element.tags}</p>
-            </div>
-        </div>`
+      <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+             <div class="img1"><img class="activator" src="${element.img}" alt=""></div>
+             <div class="img2"><img class="activator" src="http://subirimagen.me/uploads/20190114151844.png"> </div>
+          </div>
+
+          <div class="card-content">
+             <span class="card-title activator ">${element.name}<i class="material-icons right">more_vert</i></span>
+             ${element.tags}
+          </div>
+   
+          <div class="card-reveal">
+             <span class="card-title "><i class="material-icons right">close</i></span>
+             ${element.title.toUpperCase()}
+             <img class="splash" src="${element.splash}" alt="">
+          </div>  
+      </div>
+       `
+ 
     }
     );
     return result;
     }
-
- window.onload = showData(data);
-
-
+    
 
 /* EJEMPLO ALE
 const showData = (data) => {
@@ -75,3 +78,75 @@ const showData = (data) => {
  }
  
  */
+
+
+ //FILTRADO CON TAGS
+ selectTags.addEventListener('change', () => {
+    let condition = selectTags.value
+    let filtered = window.filterTags(data, condition);
+    
+    // limpio div
+      containerRoot.innerHTML = '';
+      filtered.forEach(element => {
+      containerRoot.innerHTML += `
+      <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+             <div class="img1"><img class="activator" src="${element.img}" alt=""></div>
+             <div class="img2"><img class="activator" src="http://subirimagen.me/uploads/20190114151844.png"> </div>
+          </div>
+
+          <div class="card-content">
+             <span class="card-title activator ">${element.name}<i class="material-icons right">more_vert</i></span>
+             ${element.tags}
+          </div>
+   
+          <div class="card-reveal">
+             <span class="card-title "><i class="material-icons right">close</i></span>
+             ${element.title.toUpperCase()}
+             <img class="splash" src="${element.splash}" alt="">
+          </div>  
+      </div>` 
+    })
+  })
+
+   //ORDENANDO
+  selectAz.addEventListener('change', () => {
+    let condition = selectAz.value
+    let filtered = window.sortOrderer(data, condition);
+    
+    // limpio div
+    containerRoot.innerHTML = ''; 
+     filtered.forEach(element => {
+     containerRoot.innerHTML += `
+     <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+             <div class="img1"><img class="activator" src="${element.img}" alt=""></div>
+             <div class="img2"><img class="activator" src="http://subirimagen.me/uploads/20190114151844.png"> </div>
+          </div>
+
+          <div class="card-content">
+             <span class="card-title activator ">${element.name}<i class="material-icons right">more_vert</i></span>
+             ${element.tags}
+          </div>
+   
+          <div class="card-reveal">
+             <span class="card-title "><i class="material-icons right">close</i></span>
+             ${element.title.toUpperCase()}
+             <img class="splash" src="${element.splash}" alt="">
+          </div>  
+      </div>
+   
+     `
+     })
+   
+
+   })
+  
+
+
+  window.onload = mostrarData(data);
+  
+   /*INICIALIZA EL MATERIALIZE*/
+   document.addEventListener('DOMContentLoaded', function() {
+    window.M.AutoInit();
+  });

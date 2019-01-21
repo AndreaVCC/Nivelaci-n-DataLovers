@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1"> 
     <title>Data Lovers</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -11,36 +14,74 @@
 <!-- INICIO CONTENEDOR PRINCIPAL-->
 
   <!-- HEADER-->
-    <img src="" alt="">
-     
-  <!-- MENU-->
-    <ul>
-      <div class="menu">
 
-        <!--  sección filtrar y ordenar  -->
-        <div class="filtrarYordenar">
-      
-          <!--  sección filtrar-->
-            <select class= "filtrar" id="tags">
-              <option value="">Filter...</option>
-              <option value="">Fighter</option>
-              <option value="">Tank</option>
-            </select> 
+ 
+  <!-- NAV-->
+  
+ 
+  
+       <nav class="menu">
+                <div class="input-field col s6 m3">
+                    
+                  <select class="icons" id="tags" > 
+                    <option value="" disabled selected>Filter Tags...</option>
+                    <option value="Mage" data-icon = "http://subirimagen.me/uploads/20190118061817.png" class = "circle">Mage</option>
+                    <li class="divider"></li>
+                    <option value="Tank" data-icon="https://vignette.wikia.nocookie.net/leagueoflegends/images/5/5a/Tank_icon.png/revision/latest?cb=20181117143558" class="left">Tank</option>
+                    <li class="divider"></li>
+                    <option value="Fighter" data-icon="https://vignette.wikia.nocookie.net/leagueoflegends/images/8/8f/Fighter_icon.png/revision/latest?cb=20181117143554" class="left">Fighter</option>
+                    <li class="divider"></li>
+                    <option value="Assassin" data-icon="https://vignette.wikia.nocookie.net/leagueoflegends/images/2/28/Slayer_icon.png/revision/latest/scale-to-width-down/50?cb=20181117143556" class="left">Assassin</option>
+                    <li class="divider"></li>
+                    <option value="Support" data-icon="https://vignette.wikia.nocookie.net/leagueoflegends/images/e/e0/Support_icon.png/revision/latest?cb=20181117143601" class="left">Support</option>
+                    <li class="divider"></li>
+                    <option value="Marksman" data-icon="https://vignette.wikia.nocookie.net/leagueoflegends/images/7/7f/Marksman_icon.png/revision/latest?cb=20181117143555" class="left">Marksman</option>
+                  </select>
+                </div>
+
+                <div class="input-field col s6 m3">
+                    <select class="icons" id="order">
+                    <option value="" disabled selected>Order by...</option>
+                    <li class="divider"></li>
+                    <option value="ascendant" data-icon="images/sample-1.jpg">A-Z</option>
+                    <li class="divider"></li>
+                    <option value="descendant" data-icon="images/office.jpg">Z-A</option>
+                    </select>
+                  </div>
+    </nav>
+
     
-          <!--  sección ordenar -->
-            <select class="ordenar" id="">
-              <option value="">Sort...</option>
-              <option value="">A-Z</option>
-              <option value="">Z-A</option>
-            </select>
-        </div>
-      </div>
-    </ul>   
 
-  <!-- BODY-->
+        
+               
+    
+
+  <!-- SECTION -->
     <section id="root" class="container-fluid"></section>
     
-        <!-- Diseño CARD 
+  <!-- Diseño Card con Materialize
+    <div class="card">
+
+        <div class="card-image waves-effect waves-block waves-light">
+            <div class="img1"><img src="https://www.masterypoints.com/assets/img/lol/champion_icons/Aatrox.png" alt=""></div>
+            <div class="img2"><img src="http://subirimagen.me/uploads/20190114151844.png"> </div>
+        </div>
+
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Aatrox<i class="material-icons right">more_vert</i></span>
+        </div>
+     
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Aatrox<i class="material-icons right">close</i></span>
+          <p>"Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's ..."</p>
+        
+       </div>
+
+    </div> 
+-->
+
+
+        <!-- Diseño CARD bootstrap
         <section class="container-fluid">
           <div class="card">
             <div class="box">
@@ -56,14 +97,19 @@
 
   <!-- FOOTER-->
 
+  <footer>
+    
+  </footer>
+
 <!-- FIN CONTENEDOR PRINCIPAL-->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+         
 
     <script src="./data/lol/lol.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
+    
   </body>
 </html>
