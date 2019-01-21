@@ -5,76 +5,136 @@
     align-content: flex-end;
     flex-wrap: wrap;
     align-items: center;
-    padding: 17px;
+    padding: 25px 0px 0px 0px;
+    
+ 
 
     /*IMAGEN FONDO FIJA*/
-
-    
     background-image: url('http://subirimagen.me/uploads/20190114160446.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
 
     display: flex;
     justify-content: center;
+   }
+
+  .menu{
+    background: black;
+    color: goldenrod;
+    display: flex;
+    justify-content: center;
   }
+  
+  nav .input-field {
+    margin: 0px;
+    height: 100%;
+    padding: 20px 5px 30px 5px;
+}
+
+.select-wrapper {
+  justify-content: center;
+  align-content: center;
+}
+
+  .select-wrapper input.select-dropdown {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #686240;
+    outline: none;
+    height: 2rem;
+    width: 200px;
+    font-size: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    color: rgb(114, 102, 70);
+    border-radius: 5px;
+    background-color: rgb(22, 22, 32);
+    
+}
+  /*CARD FRONTAL TOTAL*/
+
+
+  .waves-effect {
+    width: 200px;
+    height: 100px;
+  }
+
 
   .card {
-    color:rgb(197, 160, 67);
-    width: 150px;
-    height: 200px;
     margin: 1em;
-    /*background-image: url("http://www.desktopimages.org/pictures/2014/0205/2/metal-texture-pics-367883.jpg");*/
-    background:rgba(0,0,0,.5);
-    box-shadow: 0 20px 50px rgba(0,0,0,.1);
+    width: 200px;
+    height: 200px;
+    background:rgba(0,0,0,.4);
+    box-shadow: 0 20px 50px rgba(24, 16, 43, 0.1);
     border-radius: 20px;
-    text-align: center;
-    align-content: center;
-    border: 1px solid goldenrod;
+    color: rgb(199, 160, 61);
+    
+    border: 1px solid rgb(117, 90, 20);
   }
 
-  .card .box .img img {
-    width: auto;
-    height: auto;
-    border-radius: 20px;
+   /*CARD MINI IMAGENES FRONTALES*/
 
-    position:absolute;
-   
-    top: 43px;
+   /*imagen1*/
+  .card .card-image .img1 {
+    width: 50px;
+    height: 50px;
+    position:relative;
+     top: 25px;
+    left : 77px;
+    z-index: 1;
+  }
+
+          /*borde-radio imagen1*/
+          .card .card-image img {
+          display: block;
+           border-radius: 50px;
+          }
+
+  /*imagen2*/
+  .card .card-image .img2 {
+    width: 92px;
+    height: 92px;
+    position: relative;
+    top: -45px;
     left : 55px;
-    z-index: 1;
+    z-index: 16;
   }
 
-  .card .box .img2 img {
-    width: 80px;
-    height: 75px;
-    position:absolute;
   
-    top: 24px;
-    left : 35px;
-    z-index: 1;
+
+  /*CARD FRONTAL INFERIOR*/
+  .card .card-content{
+    width: 197px;
+    background: rgb(2, 1, 12);
+    border-radius:5px;
+    padding: 5px 15px 15px 20px;   
+    
   }
 
+   /*CARD POSTERIOR */
+  .card .card-reveal{
+    color:rgb(153, 116, 22);
+    background: rgb(4, 5, 14);
+    padding: 15px;
+   
+ 
+  }
 
-  /*MENU*/
-.menu {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  
-}
+      .splash {
+      width: 150px;
+      height: 115px;
+      border-radius: 20px;
+      padding: 15px 0px 0px 10px;
 
-/*MENU STICKY*/
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(24, 41, 73);
-  position: sticky;
-  top: 0px;
-  width: 100%;
-  position: -webkit-sticky; /* Safari */
-  z-index: 500;
-}
+      
+      }
 
-  
+
+
+ 
+
